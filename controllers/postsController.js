@@ -61,7 +61,29 @@ function modify (req,res){
 
 //destroy
 function destroy(req,res){
-    res.send(`Eliminazione del post ${req.params.id}`)
+    //res.send(`Eliminazione del post ${req.params.id}`)
+
+    //recuper il valore del parametro dinamico
+    const id = parseInt(req.params.id);
+
+    //vado a re
+    const post = posts.find(p => p.id === id);
+
+    //vado ad eliminare l'elemento trovato dall'array
+    posts.splice(posts.indexOf(post), 1);
+
+    //restituisco la pizza
+    res.json(post);
+    
+    //per debug
+    console.log(posts); 
+
+    res.sendStatus(200);
+
+    // res.json({
+    //     success: true,
+    //     message: "Post eliminata con successo"
+    // })
 }
 
 module.exports={index,show,store,update,modify,destroy}
