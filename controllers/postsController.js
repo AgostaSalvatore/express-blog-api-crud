@@ -21,3 +21,7 @@ function update(req,res){
     res.send(`Modifica totale del post ${req.params.id}`);
 };
 
+//modify
+function modify (req,res){
+    res.send(`Modifica Parziale del post ${req.params.id}`)
+}
