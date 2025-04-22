@@ -8,7 +8,18 @@ function index(req,res){
 
 //show
 function show(req,res){
-    res.json(`mostra post ${req.params.id}`);
+    const id = parseInt(req.params.id);
+    const post = posts.find(p => p.id === id);
+    if (post) {
+        res.json(post);
+    }
+    else{
+        //importo lo stato
+        res.status(404);
+        return res.json({
+            message: `posts numero ${req.params.id} non trovato`
+        });
+    }
 }
 
 //store

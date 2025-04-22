@@ -4,44 +4,26 @@ const express = require('express');
 //inizializzo router
 const router = express.Router();
 
-//vado a riprendere l'array
-const posts = require('../posts.js')
+//importo il controller dei posts
+const postsController = require('../controllers/postsController.js');
+
 
 //index
-router.get('/', (req,res) =>{
-    res.json(posts)
-});
+router.get('/', postsController.index);
 
 //show
-router.get('/:id', (req, res) => {
-    const id = parseInt(req.params.id);
-    const post = posts.find(p => p.id === id);
-    if (post) {
-        res.json(post);
-    }
-    else{
-        res.send(`posts numero ${req.params.id} vuoto`);
-    }
-});
+router.get('/:id', postsController.show);
 
 //store
-router.post('/',(req,res) =>{
-    res.send('Inserimento di un nuovo post');
-})
+router.post('/', postsController.store);
 
 //update
-router.put('/:id', (req,res) =>{
-    res.send(`Modifica totale del post ${req.params.id}`);
-});
+router.put('/:id', postsController.update);
 
 //modify
-router.patch('/:id', (req,res) =>{
-    res.send(`Modifica parziale del post ${req.params.id}`);
-});
+router.patch('/:id', postsController.modify);
 
 //destroy
-router.delete('/:id', (req,res) =>{
-    res.send(`Eliminazione del post ${req.params.id}`);
-});
+router.delete('/:id', postsController.destroy);
 
 module.exports = router;
