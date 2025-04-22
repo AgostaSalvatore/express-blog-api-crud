@@ -8,5 +8,11 @@ function index(req,res){
 
 //show
 function show(req,res){
-    res.send(`mostra post ${req.params.id}`);
+    res.json(`mostra post ${req.params.id}`);
 }
+
+//store
+function store(req,res){
+    res.send('Inserimento nuovo post')
+};
+
