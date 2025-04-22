@@ -25,3 +25,8 @@ function update(req,res){
 function modify (req,res){
     res.send(`Modifica Parziale del post ${req.params.id}`)
 }
+
+//destroy
+function destroy(req,res){
+    res.send(`Eliminazione del post ${req.params.id}`)
+}
