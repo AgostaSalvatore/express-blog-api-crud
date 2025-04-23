@@ -51,13 +51,19 @@ function show(req,res){
 
 //store
 function store(req,res){
-    res.send('Inserimento nuovo post')
-};
+    //res.send('Inserimento nuovo post')
+    
+    //recupero il body della richiesta
+    console.log(req.body);
+    
+    
+}
 
 //update
 function update(req,res){
     res.send(`Modifica totale del post ${req.params.id}`);
-};
+}
+
 
 //modify
 function modify (req,res){
