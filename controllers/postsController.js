@@ -66,7 +66,7 @@ function destroy(req,res){
     //recuper il valore del parametro dinamico
     const id = parseInt(req.params.id);
 
-    //vado a re
+    //vado a recuperare l'elemento trovato dall'array
     const post = posts.find(p => p.id === id);
 
     //vado ad eliminare l'elemento trovato dall'array
@@ -82,7 +82,7 @@ function destroy(req,res){
 
     // res.json({
     //     success: true,
-    //     message: "Post eliminata con successo"
+    //     message: "Post eliminato con successo"
     // })
 }
 
