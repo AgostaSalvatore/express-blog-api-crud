@@ -78,7 +78,25 @@ function store(req,res){
 
 //update
 function update(req,res){
-    res.send(`Modifica totale del post ${req.params.id}`);
+    //res.send(`Modifica totale del post ${req.params.id}`);
+    
+    //recupero il valore del parametro dinamico
+    const id = parseInt(req.params.id);
+    
+    //vado a recuperare il post
+    const post = posts.find(post => post.id === id);
+
+    //recupero il body della richiesta
+    console.log(req.body);
+    
+    //modifico il post
+    post.title = req.body.title;
+    post.content = req.body.content;
+    post.image = req.body.image;
+    post.tags = req.body.tags;
+
+    //restituisco il post modificato
+    res.json(post);
 }
 
 
