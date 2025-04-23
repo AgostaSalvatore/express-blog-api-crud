@@ -63,7 +63,7 @@ function modify (req,res){
 function destroy(req,res){
     //res.send(`Eliminazione del post ${req.params.id}`)
 
-    //recuper il valore del parametro dinamico
+    //recupero il valore del parametro dinamico
     const id = parseInt(req.params.id);
 
     //vado a recuperare l'elemento trovato dall'array
