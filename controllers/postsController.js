@@ -56,7 +56,24 @@ function store(req,res){
     //recupero il body della richiesta
     console.log(req.body);
     
+    //definizione dell'id dell'elemento da inserire
+    const newId = posts[posts.length - 1].id + 1;
     
+    //creazione dell'oggetto da inserire
+    const newPost = {
+        id: newId,
+        title: req.body.title,
+        content: req.body.content,
+        image: req.body.image,
+        tags: req.body.tags
+    };
+    
+    //inserimento dell'oggetto nell'array
+    posts.push(newPost);
+    
+    //restituisco la lista aggiornata
+    res.json(posts);
+
 }
 
 //update
