@@ -47,3 +47,16 @@ Numero minimo di push: 6
 Bonus
 Quelli del giorno prima, se non già fatti
 In Update, controllare se il parametro si riferisce ad un post esistente, in caso contrario, rispondere con uno stato 404 e un messaggio d’errore, sempre in formato JSON.
+
+-------------------------------------------------------PARTE 3---------------------------------------------------------------------------
+
+Esercizio di oggi (28/04/2025): Express Blog - Middlewares
+
+Dopo aver completato tutte le operazioni CRUD, completiamo le nostre API inserendo un middleware per la gestione delle rotte non registrate e uno per la gestione degli errori.
+
+Se viene chiamato un endpoint inesistente, un middleware dovrà rispondere un messaggio e uno status appropriato.
+
+Se viene generato un errore, un middleware si occuperà di rispondere con un messaggio e uno status appropriato.
+
+Numero minimo di push 4
+
