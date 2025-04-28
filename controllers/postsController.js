@@ -23,6 +23,9 @@ function index(req,res){
         }
     }
 
+    //invoco una funzione per testare l'errore
+    //myFunction();
+
     res.json(filteredPost);
 }
 

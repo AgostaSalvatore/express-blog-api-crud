@@ -6,3 +6,5 @@ function notFound(req,res,next){
         message : 'La rotta richiesta non esiste'
     });
 }
+
+module.exports = notFound;
