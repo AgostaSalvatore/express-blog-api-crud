@@ -7,6 +7,12 @@ const app = express();
 //inizializzo la porta
 const port = 3000;
 
+//importo gli assets statici
+app.use(express.static('public'));
+
+//importo i middleware
+const errorsHandler = require('./middlewares/errorsHandler.js');
+
 //indico ad express di trattare i body come json
 app.use(express.json());
 
@@ -20,6 +26,9 @@ app.use('/posts', postsRouter);
 app.get('/', (req,res) =>{
     res.send('Blog con vari post');
 });
+
+//middleware per la gestione degli errori
+app.use(errorsHandler);
 
 
 //inizializzo il listen del server sulla porta 3000
