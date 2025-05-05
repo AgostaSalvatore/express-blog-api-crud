@@ -76,7 +76,10 @@ function store(req,res){
     
     //inserimento dell'oggetto nell'array
     posts.push(newPost);
-    
+
+    //importo lo stato
+    res.status(201);
+
     //restituisco la lista aggiornata
     res.json(posts);
 
